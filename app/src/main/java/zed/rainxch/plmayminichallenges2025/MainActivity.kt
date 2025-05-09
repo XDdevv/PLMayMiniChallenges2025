@@ -14,27 +14,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import zed.rainxch.plmayminichallenges2025.daily_word_challenge.domain.speaker.TTSManager
 import zed.rainxch.plmayminichallenges2025.daily_word_challenge.presentation.DailyWordChallenge
+import zed.rainxch.plmayminichallenges2025.lesson_overview.domain.model.Author
+import zed.rainxch.plmayminichallenges2025.lesson_overview.domain.model.Lesson
+import zed.rainxch.plmayminichallenges2025.lesson_overview.presentation.LessonOverview
+import zed.rainxch.plmayminichallenges2025.lesson_overview.presentation.lessonPreview
 import zed.rainxch.plmayminichallenges2025.ui.theme.PLMayMiniChallenges2025Theme
 
 class MainActivity : ComponentActivity() {
 
-    lateinit var ttsManager: TTSManager
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        ttsManager = TTSManager(this)
         setContent {
             PLMayMiniChallenges2025Theme {
-                DailyWordChallenge(onSpeakClicked = {
-                    ttsManager.speak(it)
-                })
+
             }
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        ttsManager.shutdown()
-    }
 }

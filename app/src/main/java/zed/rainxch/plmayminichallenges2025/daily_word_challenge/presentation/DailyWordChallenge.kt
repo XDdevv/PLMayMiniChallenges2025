@@ -24,17 +24,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import zed.rainxch.plmayminichallenges2025.R
 import zed.rainxch.plmayminichallenges2025.daily_word_challenge.data.wordList
-
-val montserratFont = FontFamily(Font(R.font.montserrat_light))
-val poltawskiFont = FontFamily(Font(R.font.poltawski_nowy_bold))
+import zed.rainxch.plmayminichallenges2025.ui.theme.montserratLightFont
+import zed.rainxch.plmayminichallenges2025.ui.theme.poltawskiFont
 
 @Composable
 fun DailyWordChallenge(
@@ -87,7 +84,7 @@ fun DailyWordChallenge(
                 Spacer(Modifier.height(12.dp))
                 Text(
                     text = word.definition,
-                    fontFamily = montserratFont,
+                    fontFamily = montserratLightFont,
                     fontSize = 20.sp,
                     textAlign = TextAlign.Center,
                     color = definitionTextColor
