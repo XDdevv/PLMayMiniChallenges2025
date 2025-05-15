@@ -20,9 +20,9 @@ Welcome to my submission for the **May 2025 Mini-Challenge** hosted by [Philipp 
 
 ## 🖼️ Demo Preview
 
-[https://github.com/XDdevv/PLMayMiniChallenges2025/blob/master/Screencast%20From%202025-05-15%2014-33-45.mp4]: # (Insert a GIF or image here)
+[[]: # (Insert a GIF or image here)
 ![Study Board Demo]
-
+](https://github.com/XDdevv/PLMayMiniChallenges2025/blob/master/Screencast%20From%202025-05-15%2014-33-45.mp4])
 ---
 
 ## 🔧 Features Implemented
