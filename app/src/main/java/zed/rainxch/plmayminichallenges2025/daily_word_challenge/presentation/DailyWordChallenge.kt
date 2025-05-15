@@ -30,8 +30,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import zed.rainxch.plmayminichallenges2025.R
 import zed.rainxch.plmayminichallenges2025.daily_word_challenge.data.wordList
-import zed.rainxch.plmayminichallenges2025.ui.theme.montserratLightFont
-import zed.rainxch.plmayminichallenges2025.ui.theme.poltawskiFont
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.montserratLightFont
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.poltawskiFont
 
 @Composable
 fun DailyWordChallenge(

@@ -1,6 +1,7 @@
-package zed.rainxch.plmayminichallenges2025.study_feed_switcher.presentation.components
+package zed.rainxch.plmayminichallenges2025.core.presentation.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
@@ -17,17 +18,25 @@ import zed.rainxch.plmayminichallenges2025.core.ui.theme.montserratSemiBoldFont
 @Composable
 fun TextChip(
     content: String,
-    modifier: Modifier = Modifier
+    backgroundColor: Color = Color(0x51FFFFFF),
+    textColor: Color = Color.White,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit = {}
 ) {
     Box(
         modifier = modifier
+            .padding(end = 8.dp)
             .clip(CircleShape)
-            .background(Color(0x51FFFFFF))
+            .background(backgroundColor)
+            .clickable {
+                onClick()
+            }
             .padding(vertical = 2.dp, horizontal = 12.dp)
+
     ) {
         Text(
             text = content,
-            color = Color.White,
+            color = textColor,
             fontFamily = montserratSemiBoldFont,
             fontSize = 15.sp
         )

@@ -78,7 +78,7 @@ import zed.rainxch.plmayminichallenges2025.scrollable_study_content.domain.model
 
 
 
-val lessonTopics = listOf(
+val lessonTopicList = listOf(
     // Science
     LessonTopic("Photosynthesis Basics", "Science"),
     LessonTopic("Newton’s Laws of Motion", "Science"),
@@ -150,4 +150,4 @@ val lessonTopics = listOf(
     LessonTopic("Countries and Capitals", "Geography"),
     LessonTopic("Population Density", "Geography"),
     LessonTopic("Regions of the World", "Geography")
-)
+).sortedBy { it.category }.reversed()

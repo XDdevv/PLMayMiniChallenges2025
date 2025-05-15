@@ -13,8 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import zed.rainxch.plmayminichallenges2025.ui.theme.LessonOverviewColors
-import zed.rainxch.plmayminichallenges2025.ui.theme.montserratLightFont
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.LessonOverviewColors
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.montserratLightFont
 
 @Composable
 fun GonnaLearnItem(

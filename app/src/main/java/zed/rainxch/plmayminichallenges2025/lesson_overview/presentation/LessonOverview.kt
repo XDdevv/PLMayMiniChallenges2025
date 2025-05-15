@@ -31,10 +31,10 @@ import zed.rainxch.plmayminichallenges2025.lesson_overview.domain.model.Lesson
 import zed.rainxch.plmayminichallenges2025.lesson_overview.presentation.components.AuthorCard
 import zed.rainxch.plmayminichallenges2025.lesson_overview.presentation.components.CategoryItem
 import zed.rainxch.plmayminichallenges2025.lesson_overview.presentation.components.GonnaLearnItem
-import zed.rainxch.plmayminichallenges2025.ui.theme.LessonOverviewColors
-import zed.rainxch.plmayminichallenges2025.ui.theme.montserratLightFont
-import zed.rainxch.plmayminichallenges2025.ui.theme.montserratSemiBoldFont
-import zed.rainxch.plmayminichallenges2025.ui.theme.poltawskiFont
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.LessonOverviewColors
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.montserratLightFont
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.montserratSemiBoldFont
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.poltawskiFont
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

@@ -21,8 +21,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import zed.rainxch.plmayminichallenges2025.R
 import zed.rainxch.plmayminichallenges2025.lesson_overview.domain.model.Category
-import zed.rainxch.plmayminichallenges2025.ui.theme.LessonOverviewColors
-import zed.rainxch.plmayminichallenges2025.ui.theme.montserratSemiBoldFont
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.LessonOverviewColors
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.montserratSemiBoldFont
 
 @Composable
 fun CategoryItem(

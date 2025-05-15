@@ -40,7 +40,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import zed.rainxch.plmayminichallenges2025.study_feed_switcher.presentation.components.TextChip
+import zed.rainxch.plmayminichallenges2025.core.presentation.components.TextChip
 import zed.rainxch.plmayminichallenges2025.study_feed_switcher.presentation.data.quickLessonsUI
 import zed.rainxch.plmayminichallenges2025.core.ui.theme.montserratLightFont
 import zed.rainxch.plmayminichallenges2025.core.ui.theme.poltawskiFont
@@ -170,7 +170,13 @@ fun StudyFeetSwitcherScreen(
                         .padding(32.dp),
                     verticalArrangement = Arrangement.Center,
                 ) {
-                    TextChip(content = currentItem.subject)
+                    TextChip(
+                        content = currentItem.subject,
+                        modifier = Modifier.padding(
+                            vertical = 2.dp,
+                            horizontal = 12.dp
+                        )
+                    )
 
                     Spacer(Modifier.height(16.dp))
 
