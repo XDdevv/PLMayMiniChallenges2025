@@ -117,7 +117,7 @@ fun SearchableStudyListScreen(modifier: Modifier = Modifier) {
                     items = list,
                     key = { it.title.hashCode().toString() }
                 ) { item ->
-                    TopicItem(item, Modifier.animateItemPlacement())
+                    TopicItem(item, Modifier.animateItem())
                 }
             }
         }
