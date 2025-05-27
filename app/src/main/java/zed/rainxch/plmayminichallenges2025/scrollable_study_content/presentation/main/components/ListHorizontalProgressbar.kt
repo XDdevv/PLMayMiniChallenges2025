@@ -37,8 +37,6 @@ fun ListHorizontalProgressbar(modifier: Modifier = Modifier, scrollState: LazyLi
                         cornerRadius = CornerRadius(2.dp.toPx())
                     )
                 }
-        ) {
-
-        }
+        )
     }
 }

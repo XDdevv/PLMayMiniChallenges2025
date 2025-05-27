@@ -215,6 +215,6 @@ fun StudyFeetSwitcherScreen(
 
 @Preview
 @Composable
-fun StudyFeetSwitcherScreenPreview(modifier: Modifier = Modifier) {
+fun StudyFeetSwitcherScreenPreview() {
     StudyFeetSwitcherScreen()
 }

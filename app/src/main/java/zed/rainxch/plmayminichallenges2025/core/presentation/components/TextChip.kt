@@ -19,7 +19,7 @@ import zed.rainxch.plmayminichallenges2025.core.ui.theme.montserratSemiBoldFont
 fun TextChip(
     content: String,
     backgroundColor: Color = Color(0x51FFFFFF),
-    textColor: Color = Color.White,
+    contentColor: Color = Color.White,
     modifier: Modifier = Modifier,
     onClick: () -> Unit = {}
 ) {
@@ -36,7 +36,7 @@ fun TextChip(
     ) {
         Text(
             text = content,
-            color = textColor,
+            color = contentColor,
             fontFamily = montserratSemiBoldFont,
             fontSize = 15.sp
         )

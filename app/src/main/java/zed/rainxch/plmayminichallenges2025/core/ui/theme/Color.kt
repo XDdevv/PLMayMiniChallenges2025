@@ -1,5 +1,6 @@
 package zed.rainxch.plmayminichallenges2025.core.ui.theme
 
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 
@@ -21,6 +22,19 @@ object LessonTopicStudyTheme {
     const val HEADLINE_BACKGROUND = 0xffE4E4FE
 
     val BACKGROUND_BRUSH = SolidColor(Color(0x276B74F8))
+}
+
+object SearchableStudyTheme {
+    val bgGradient = Brush.linearGradient(
+        listOf(
+            Color(0x806B74F8),
+            Color(0x80FDE5F3),
+            Color(0xffFEF7EE)
+        )
+    )
+    val bgInput = Color(0xffF5F5F8)
+    val tintSearchIcon = Color(0x804F5980)
+    val colorSearchText = Color(0xff4C4F59)
 }
 
 enum class LessonOverviewColors(val color: Color) {

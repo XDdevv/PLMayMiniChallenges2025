@@ -2,4 +2,6 @@
     <string name="app_name">PLMayMiniChallenges2025</string>
     <string name="reaching_the_end_of_the_list">Reaching the end of the list!</string>
     <string name="you_reached_the_max_limit_of_pinning_lessons_max_is_5">You reached the max limit of pinning lessons (max is 5)</string>
+    <string name="study_topics">Study Topics</string>
+    <string name="search_icon">Search icon</string>
 </resources>
