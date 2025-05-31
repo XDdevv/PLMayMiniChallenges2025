@@ -2,6 +2,7 @@ package zed.rainxch.plmayminichallenges2025.searchable_study_list.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -81,27 +82,30 @@ fun SearchableStudyListScreen(modifier: Modifier = Modifier) {
                         .fillMaxWidth()
                         .background(SearchableStudyTheme.bgInput, CircleShape),
                     decorationBox = { content ->
-                        Row(
+                        Box(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(horizontal = 8.dp),
-                            verticalAlignment = Alignment.CenterVertically,
+                            contentAlignment = Alignment.CenterStart
                         ) {
-                            Icon(
-                                imageVector = Icons.Default.Search,
-                                contentDescription = stringResource(R.string.search_icon),
-                                tint = SearchableStudyTheme.tintSearchIcon,
-                                modifier = Modifier.padding(14.dp)
-                            )
-                            if (searchText.isNotEmpty()) {
-                                content()
-                            } else {
-                                Text(
-                                    text = stringResource(R.string.search_by_topic_or_subject),
-                                    fontSize = 16.sp,
-                                    fontFamily = montserratLightFont,
-                                    color = SearchableStudyTheme.colorSearchText
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Search,
+                                    contentDescription = stringResource(R.string.search_icon),
+                                    tint = SearchableStudyTheme.tintSearchIcon,
+                                    modifier = Modifier.padding(14.dp)
                                 )
+                                if (searchText.isEmpty()) {
+                                    Text(
+                                        text = stringResource(R.string.search_by_topic_or_subject),
+                                        fontSize = 16.sp,
+                                        fontFamily = montserratLightFont,
+                                        color = SearchableStudyTheme.colorSearchText
+                                    )
+                                } else
+                                    content()
                             }
                         }
                     }
@@ -117,7 +121,7 @@ fun SearchableStudyListScreen(modifier: Modifier = Modifier) {
                     item {
                         Spacer(Modifier.height(20.dp))
                         Text(
-                            text = "No results found, try searching again!",
+                            text = stringResource(R.string.no_results_found_try_searching_again),
                             fontSize = 16.sp,
                             color = SearchableStudyTheme.noItemTextColor,
                             modifier = Modifier.fillMaxWidth(),
