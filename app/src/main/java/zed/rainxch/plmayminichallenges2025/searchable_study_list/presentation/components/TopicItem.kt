@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.absolutePadding
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import zed.rainxch.plmayminichallenges2025.core.presentation.components.TextChip
+import zed.rainxch.plmayminichallenges2025.core.ui.theme.SearchableStudyTheme
 import zed.rainxch.plmayminichallenges2025.core.ui.theme.poltawskiFont
 import zed.rainxch.plmayminichallenges2025.searchable_study_list.domain.model.SearchableStudyItem
 
@@ -31,7 +33,9 @@ fun TopicItem(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
-        FlowRow {
+        FlowRow(
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
             searchableStudyItem.categories.forEach { it ->
                 TextChip(
                     content = it.category,
@@ -44,7 +48,8 @@ fun TopicItem(
         Text(
             text = searchableStudyItem.title,
             fontFamily = poltawskiFont,
-            fontSize = 22.sp
+            fontSize = 22.sp,
+            color = SearchableStudyTheme.primaryText
         )
     }
 }

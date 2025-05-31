@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
@@ -27,13 +26,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import zed.rainxch.plmayminichallenges2025.R
-import zed.rainxch.plmayminichallenges2025.core.ui.theme.PLMayMiniChallenges2025Theme
 import zed.rainxch.plmayminichallenges2025.core.ui.theme.SearchableStudyTheme
 import zed.rainxch.plmayminichallenges2025.core.ui.theme.montserratLightFont
 import zed.rainxch.plmayminichallenges2025.core.ui.theme.montserratSemiBoldFont
@@ -66,14 +64,15 @@ fun SearchableStudyListScreen(modifier: Modifier = Modifier) {
                 Text(
                     text = stringResource(R.string.study_topics),
                     fontFamily = montserratSemiBoldFont,
-                    fontSize = 22.sp
+                    fontSize = 22.sp,
+                    color = SearchableStudyTheme.primaryText
                 )
                 BasicTextField(
                     value = searchText,
                     textStyle = TextStyle(
                         fontFamily = montserratLightFont,
                         fontSize = 18.sp,
-                        color = SearchableStudyTheme.colorSearchText
+                        color = SearchableStudyTheme.primaryText
                     ),
                     onValueChange = { query ->
                         viewModel.search(query)
@@ -98,9 +97,10 @@ fun SearchableStudyListScreen(modifier: Modifier = Modifier) {
                                 content()
                             } else {
                                 Text(
-                                    text = "Search by topic or subject",
+                                    text = stringResource(R.string.search_by_topic_or_subject),
                                     fontSize = 16.sp,
-                                    fontFamily = montserratLightFont
+                                    fontFamily = montserratLightFont,
+                                    color = SearchableStudyTheme.colorSearchText
                                 )
                             }
                         }
@@ -113,11 +113,28 @@ fun SearchableStudyListScreen(modifier: Modifier = Modifier) {
                     .background(brush = SearchableStudyTheme.bgGradient)
                     .padding(20.dp)
             ) {
-                items(
-                    items = list,
-                    key = { it.title.hashCode().toString() }
-                ) { item ->
-                    TopicItem(item, Modifier.animateItem())
+                if (list.isEmpty()) {
+                    item {
+                        Spacer(Modifier.height(20.dp))
+                        Text(
+                            text = "No results found, try searching again!",
+                            fontSize = 16.sp,
+                            color = SearchableStudyTheme.noItemTextColor,
+                            modifier = Modifier.fillMaxWidth(),
+                            textAlign = TextAlign.Center,
+                            fontFamily = montserratSemiBoldFont
+                        )
+                    }
+                } else {
+                    items(
+                        items = list,
+                        key = { it.title.hashCode().toString() }
+                    ) { item ->
+                        TopicItem(
+                            searchableStudyItem = item,
+                            modifier = Modifier.animateItem()
+                        )
+                    }
                 }
             }
         }

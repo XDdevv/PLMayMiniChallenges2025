@@ -35,6 +35,8 @@ object SearchableStudyTheme {
     val bgInput = Color(0xffF5F5F8)
     val tintSearchIcon = Color(0x804F5980)
     val colorSearchText = Color(0xff4C4F59)
+    val primaryText = Color(0xff13182C)
+    val noItemTextColor = Color(0xff9296D1)
 }
 
 enum class LessonOverviewColors(val color: Color) {
